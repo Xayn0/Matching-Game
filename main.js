@@ -10,6 +10,22 @@ document.querySelector(".control-buttons span").onclick = function () {
   document.querySelector(".control-buttons").remove();
 };
 
+
+ // make shuffle button
+  let resetButton = document.querySelector('.reset-div');
+  resetButton.addEventListener('click' , (e) => {
+    e.preventDefault();
+    shuffle(orderRange);
+
+blocks.forEach((block, index) => {
+  block.style.order = orderRange[index];
+block.classList.remove('is-flipped');
+block.classList.remove('has-match');
+  
+  });
+});
+
+  
 let duration = 1000;
 
 let blocksContainer = document.querySelector(".memory-game-blocks");
